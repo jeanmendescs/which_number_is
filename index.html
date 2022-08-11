@@ -48,12 +48,12 @@
         <div class="input-wrapper" id="input-wrapper">
           <input
             id="input"
-            type="number"
-            min="1"
-            max="999"
+            type="text"
             maxlength="3"
             placeholder="Digite o palpite"
-            onchange="onChangeHandle(this.value)"
+            oninput="onInputHandle(this.value)"
+            autocomplete="off"
+          />
           />
           <button type="button" class="send-button" onclick="onClickHandle()">
             ENVIAR

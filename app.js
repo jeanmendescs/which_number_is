@@ -2,22 +2,21 @@ let currentGuess;
 const userGuess = document.getElementById("user-guess");
 const input = document.getElementById("input");
 
-input.addEventListener("input", (e) => {
-  const value = e.target.value;
-  const valueToNumber = value;
+const onInputHandle = (value) => {
+  const numberPattern = /\d+/g;
+  const onlyNumbersCheck = value.match(numberPattern);
 
-  if (valueToNumber > 999) {
-    return (input.value = value.slice(0, 3));
+  if (!onlyNumbersCheck) {
+    input.value = "";
   }
-});
 
-const onChangeHandle = (value) => {
+  if (onlyNumbersCheck && value.length > onlyNumbersCheck.length) {
+    input.value = onlyNumbersCheck.join("");
+  }
+
   currentGuess = value;
+  userGuess.innerHTML = value;
 };
-
-document.addEventListener("change", () => {
-  userGuess.innerHTML = currentGuess;
-});
 
 const fetchData = () => {
   fetch("https://us-central1-ss-devops.cloudfunctions.net/rand?min=1&max=300")
