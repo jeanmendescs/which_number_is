@@ -38,13 +38,14 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
 }
 
 .card {
   background: linear-gradient(180deg, #eeeeee 0%, #ffffff 100%);
   width: 365px;
   height: 588px;
-  padding: 60px 30px;
+  padding: 60px 30px 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -95,3 +96,32 @@ hr {
 .send-button:hover {
   opacity: 0.8;
 }
+
+.item-0 {
+  width: 50.73px;
+  height: 10.98px;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+  background: #dddddd;
+}
+
+.description {
+  color: red;
+}
+
+.d-none {
+  display: none;
+}
+
+/* .number-1 {
+  .item-0,
+  .item-1 {
+    background: #262a34;
+  }
+}
+
+.number-1--success {
+  .item-0,
+  .item-1 {
+    background: #262a34;
+  }
+} */
