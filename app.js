@@ -2,20 +2,22 @@ let currentGuess;
 const userGuess = document.getElementById("user-guess");
 const input = document.getElementById("input");
 
+const updateValue = (string) => {
+  currentGuess = string;
+  userGuess.innerHTML = string;
+  input.value = string;
+};
+
 const onInputHandle = (value) => {
   const numberPattern = /\d+/g;
   const onlyNumbersCheck = value.match(numberPattern);
 
   if (!onlyNumbersCheck) {
-    input.value = "";
+    updateValue("");
+    return;
   }
 
-  if (onlyNumbersCheck && value.length > onlyNumbersCheck.length) {
-    input.value = onlyNumbersCheck.join("");
-  }
-
-  currentGuess = value;
-  userGuess.innerHTML = value;
+  updateValue(onlyNumbersCheck.join(""));
 };
 
 const fetchData = () => {
