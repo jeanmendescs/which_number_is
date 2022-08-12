@@ -74,10 +74,9 @@ hr {
 
 .display-wrapper {
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
   align-self: center;
   align-items: center;
+  gap: 10px;
 }
 
 .input-wrapper {
@@ -104,10 +103,47 @@ hr {
 }
 
 .item-0 {
-  width: 50.73px;
-  height: 10.98px;
-  transform: matrix(1, 0, 0, -1, 0, 0);
-  background: #dddddd;
+  transform: rotate(180deg);
+}
+
+.item-1 {
+  position: absolute;
+  transform: rotate(90deg);
+  left: -22px;
+  top: 25px;
+}
+
+.item-2 {
+  position: absolute;
+  transform: rotate(90deg);
+  left: -22px;
+  top: 78px;
+}
+
+.item-3 {
+  top: 100px;
+  left: 0px;
+  position: absolute;
+}
+
+.item-4 {
+  transform: rotate(270deg);
+  left: 22px;
+  top: 25px;
+  position: absolute;
+}
+
+.item-5 {
+  transform: rotate(270deg);
+  left: 22px;
+  top: 78px;
+  position: absolute;
+}
+
+.item-6 {
+  left: 2px;
+  position: absolute;
+  top: 50px;
 }
 
 .description {
