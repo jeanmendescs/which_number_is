@@ -74,9 +74,16 @@ hr {
 
 .display-wrapper {
   display: flex;
-  align-self: center;
+  flex-direction: column;
   align-items: center;
+}
+
+.numbers {
+  display: flex;
   gap: 10px;
+  height: 110px;
+  margin-top: 10px;
+  margin-bottom: 60px;
 }
 
 .input-wrapper {
@@ -100,6 +107,14 @@ hr {
 .send-button:disabled {
   background: #dddddd;
   opacity: 1;
+}
+
+.description {
+  color: #ff6600;
+}
+
+.d-none {
+  display: none;
 }
 
 .item-0 {
@@ -145,25 +160,3 @@ hr {
   position: absolute;
   top: 50px;
 }
-
-.description {
-  color: red;
-}
-
-.d-none {
-  display: none;
-}
-
-/* .number-1 {
-  .item-0,
-  .item-1 {
-    background: #262a34;
-  }
-}
-
-.number-1--success {
-  .item-0,
-  .item-1 {
-    background: #262a34;
-  }
-} */

@@ -8,14 +8,14 @@ const firstDigit = document.getElementById("first-digit");
 const secondDigit = document.getElementById("second-digit");
 const thirdDigit = document.getElementById("third-digit");
 
-const displayNumber = (number, id) => {
+const displayNumber = (number, id, color) => {
   let elements = [];
   for (let i = 0; i <= 6; i++) {
     const element = document.getElementById(`${id}-${i}`);
     elements.push(element);
   }
 
-  elements.forEach((element) => (element.src = "assets/black-bar.svg"));
+  elements.forEach((element) => (element.src = `assets/${color}-bar.svg`));
 
   switch (number) {
     case 0:
@@ -82,12 +82,12 @@ const onInputHandle = (value) => {
   updateValue(onlyNumbersCheck.join(""));
 };
 
-const displayedNumbersToChange = (number) => {
+const displayedNumbersToChange = (number, color) => {
   const elements = [];
   const numberToString = String(number);
 
   if (number < 10) {
-    elements.push({ id: "first-digit", number });
+    elements.push({ id: "first-digit", number, color });
     firstDigit.classList.remove(`d-none`);
     secondDigit.classList.add(`d-none`);
     thirdDigit.classList.add(`d-none`);
@@ -95,8 +95,8 @@ const displayedNumbersToChange = (number) => {
   }
   if (number < 100) {
     elements.push(
-      { id: "first-digit", number: Number(numberToString[0]) },
-      { id: "second-digit", number: Number(numberToString[1]) }
+      { id: "first-digit", number: Number(numberToString[0]), color },
+      { id: "second-digit", number: Number(numberToString[1]), color }
     );
     firstDigit.classList.remove(`d-none`);
     secondDigit.classList.remove(`d-none`);
@@ -109,17 +109,18 @@ const displayedNumbersToChange = (number) => {
   thirdDigit.classList.remove(`d-none`);
 
   elements.push(
-    { id: "first-digit", number: Number(numberToString[0]) },
-    { id: "second-digit", number: Number(numberToString[1]) },
-    { id: "third-digit", number: Number(numberToString[2]) }
+    { id: "first-digit", number: Number(numberToString[0]), color },
+    { id: "second-digit", number: Number(numberToString[1]), color },
+    { id: "third-digit", number: Number(numberToString[2]), color }
   );
   return elements;
 };
 
-const displayedNumbersHandle = (number) => {
-  const displayNumbers = displayedNumbersToChange(number);
-  console.log(displayNumbers);
-  displayNumbers.forEach((item) => displayNumber(item.number, item.id));
+const displayedNumbersHandle = (number, color) => {
+  const displayNumbers = displayedNumbersToChange(number, color);
+  displayNumbers.forEach((item) =>
+    displayNumber(item.number, item.id, item.color)
+  );
 };
 
 const onFecthDataHandle = (value, isError = false) => {
@@ -130,16 +131,18 @@ const onFecthDataHandle = (value, isError = false) => {
   statusGuess.classList.remove("d-none");
 
   if (!hasWon && !isError) {
-    displayedNumbersHandle(currentGuess);
-
     statusGuess.innerHTML = isLesser ? "É menor" : "É maior";
+
+    displayedNumbersHandle(currentGuess, "black");
+
     input.disabled = false;
     currentGuess = "";
     return;
   }
 
-  displayedNumbersHandle(value);
+  statusGuess.style.color = hasWon ? "#32BF00" : "#CC3300";
   statusGuess.innerHTML = hasWon ? "Você acertou!" : "Erro";
+  displayedNumbersHandle(value, hasWon ? "green" : "red");
   newMatchButton.classList.remove("d-none");
   input.disabled = true;
   sendButton.disabled = true;
@@ -155,6 +158,7 @@ const onNewMatchHandle = () => {
   hideDisplayedNumbers();
   updateValue("");
   statusGuess.innerHTML = 0;
+  statusGuess.style.color = "#ff6600";
   statusGuess.classList.add("d-none");
   newMatchButton.classList.add("d-none");
   input.disabled = false;
@@ -162,7 +166,7 @@ const onNewMatchHandle = () => {
 };
 
 const fetchData = () => {
-  fetch("https://us-central1-ss-devops.cloudfunctions.net/rand?min=1&max=300")
+  fetch("https://us-central1-ss-devops.cloudfunctions.net/rand?min=1&max=2")
     .then((data) => data.json())
     .then((data) => {
       if (Object.keys(data).length > 1) {
