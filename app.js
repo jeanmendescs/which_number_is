@@ -166,7 +166,7 @@ const onNewMatchHandle = () => {
 };
 
 const fetchData = () => {
-  fetch("https://us-central1-ss-devops.cloudfunctions.net/rand?min=1&max=2")
+  fetch("https://us-central1-ss-devops.cloudfunctions.net/rand?min=1&max=300")
     .then((data) => data.json())
     .then((data) => {
       if (Object.keys(data).length > 1) {

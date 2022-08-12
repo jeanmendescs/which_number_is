@@ -17,10 +17,19 @@ input {
   border: 1px solid #cfcfcf;
   border-radius: 4px;
   padding: 14px 0 12px 12px;
+  color: #222222;
 }
 
 input:disabled {
   background: #f5f5f5;
+  font-family: "Roboto";
+  font-size: 12px;
+  line-height: 14px;
+  color: #9e9e9e;
+}
+
+input::placeholder {
+  color: #9e9e9e;
 }
 
 input:focus {
@@ -92,16 +101,21 @@ hr {
 }
 
 .send-button {
-  color: #ffffff;
   background: linear-gradient(180deg, #ef6c00 0%, #c0661c 100%);
   border-radius: 4px;
   border: none;
   width: 70px;
   height: 42px;
+  font-family: "Roboto", "sans-serif";
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  color: #ffffff;
+  cursor: pointer;
 }
 
 .send-button:hover {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .send-button:disabled {
@@ -109,7 +123,45 @@ hr {
   opacity: 1;
 }
 
+.new-match-button {
+  position: relative;
+  width: 130px;
+  height: 42px;
+  background: linear-gradient(180deg, #434854 0%, #9e9e9e 100%);
+  border-radius: 4px;
+  font-family: "Roboto", "sans-serif";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  color: #ffffff;
+  border: none;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+.new-match-button:hover {
+  opacity: 0.9;
+}
+
+.new-match-button::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.2364 1.7625C9.14822 0.675 7.65478 0 5.99625 0C2.67917 0 0 2.685 0 6C0 9.315 2.67917 12 5.99625 12C8.7955 12 11.1295 10.0875 11.7974 7.5H10.2364C9.62101 9.2475 7.95497 10.5 5.99625 10.5C3.51219 10.5 1.49343 8.4825 1.49343 6C1.49343 3.5175 3.51219 1.5 5.99625 1.5C7.24203 1.5 8.35272 2.0175 9.16323 2.835L6.74672 5.25H12V0L10.2364 1.7625Z' fill='white'/%3E%3C/svg%3E%0A");
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  left: 10px;
+}
+
 .description {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: -1px;
   color: #ff6600;
 }
 
