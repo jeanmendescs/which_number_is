@@ -42,8 +42,16 @@
             <span class="item-5"></span>
             <span class="item-6"></span>
           </div>
-          <h3 class="description d-none">É menor</h3>
+          <h3 class="description d-none" id="status-guess"></h3>
           <h2 id="user-guess"></h2>
+          <button
+            class="d-none"
+            type="button"
+            onclick="onNewMatchHandle()"
+            id="new-match"
+          >
+            NOVA PARTIDA
+          </button>
         </div>
         <div class="input-wrapper" id="input-wrapper">
           <input
@@ -54,8 +62,12 @@
             oninput="onInputHandle(this.value)"
             autocomplete="off"
           />
-          />
-          <button type="button" class="send-button" onclick="onClickHandle()">
+          <button
+            type="button"
+            class="send-button"
+            id="send-button"
+            onclick="onClickHandle()"
+          >
             ENVIAR
           </button>
         </div>

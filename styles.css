@@ -77,6 +77,7 @@ hr {
   justify-content: space-between;
   flex-direction: column;
   align-self: center;
+  align-items: center;
 }
 
 .input-wrapper {
@@ -95,6 +96,11 @@ hr {
 
 .send-button:hover {
   opacity: 0.8;
+}
+
+.send-button:disabled {
+  background: #dddddd;
+  opacity: 1;
 }
 
 .item-0 {
