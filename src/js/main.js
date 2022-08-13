@@ -17,54 +17,54 @@ const displayNumber = (number, id, color) => {
 
   elements.forEach((element, index) => {
     if (index === 6) {
-      element.src = `assets/center-${color}-bar.svg`;
+      element.src = `../assets/center-${color}-bar.svg`;
       return;
     }
-    element.src = `assets/${color}-bar.svg`;
+    element.src = `../assets/${color}-bar.svg`;
   });
 
   switch (number) {
     case 0:
-      elements[6].src = "assets/center-light-bar.svg";
+      elements[6].src = "../assets/center-light-bar.svg";
       break;
     case 1:
-      elements[0].src = "assets/light-bar.svg";
-      elements[1].src = "assets/light-bar.svg";
-      elements[2].src = "assets/light-bar.svg";
-      elements[3].src = "assets/light-bar.svg";
-      elements[6].src = "assets/center-light-bar.svg";
+      elements[0].src = "../assets/light-bar.svg";
+      elements[1].src = "../assets/light-bar.svg";
+      elements[2].src = "../assets/light-bar.svg";
+      elements[3].src = "../assets/light-bar.svg";
+      elements[6].src = "../assets/center-light-bar.svg";
       break;
     case 2:
-      elements[1].src = "assets/light-bar.svg";
-      elements[5].src = "assets/light-bar.svg";
+      elements[1].src = "../assets/light-bar.svg";
+      elements[5].src = "../assets/light-bar.svg";
       break;
     case 3:
-      elements[1].src = "assets/light-bar.svg";
-      elements[2].src = "assets/light-bar.svg";
+      elements[1].src = "../assets/light-bar.svg";
+      elements[2].src = "../assets/light-bar.svg";
       break;
     case 4:
-      elements[0].src = "assets/light-bar.svg";
-      elements[2].src = "assets/light-bar.svg";
-      elements[3].src = "assets/light-bar.svg";
+      elements[0].src = "../assets/light-bar.svg";
+      elements[2].src = "../assets/light-bar.svg";
+      elements[3].src = "../assets/light-bar.svg";
       break;
     case 5:
-      elements[2].src = "assets/light-bar.svg";
-      elements[4].src = "assets/light-bar.svg";
+      elements[2].src = "../assets/light-bar.svg";
+      elements[4].src = "../assets/light-bar.svg";
       break;
     case 6:
-      elements[4].src = "assets/light-bar.svg";
+      elements[4].src = "../assets/light-bar.svg";
       break;
     case 7:
-      elements[1].src = "assets/light-bar.svg";
-      elements[2].src = "assets/light-bar.svg";
-      elements[3].src = "assets/light-bar.svg";
-      elements[6].src = "assets/center-light-bar.svg";
+      elements[1].src = "../assets/light-bar.svg";
+      elements[2].src = "../assets/light-bar.svg";
+      elements[3].src = "../assets/light-bar.svg";
+      elements[6].src = "../assets/center-light-bar.svg";
       break;
     case 8:
       break;
     case 9:
-      elements[2].src = "assets/light-bar.svg";
-      elements[3].src = "assets/light-bar.svg";
+      elements[2].src = "../assets/light-bar.svg";
+      elements[3].src = "../assets/light-bar.svg";
       break;
     default:
       return;
