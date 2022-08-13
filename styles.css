@@ -26,6 +26,7 @@ input:disabled {
   font-size: 12px;
   line-height: 14px;
   color: #9e9e9e;
+  cursor: not-allowed;
 }
 
 input::placeholder {
@@ -40,7 +41,7 @@ input:focus {
 hr {
   background: #cfcfcf;
   transform: matrix(1, 0, 0, -1, 0, 0);
-  width: 78%;
+  width: 205px;
 }
 
 .container {
@@ -48,13 +49,12 @@ hr {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background: linear-gradient(180deg, #eeeeee 0%, #ffffff 100%);
 }
 
 .card {
-  background: linear-gradient(180deg, #eeeeee 0%, #ffffff 100%);
-  width: 365px;
-  height: 588px;
-  padding: 60px 30px 30px;
+  height: 100%;
+  padding: 62px 34px 31px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -79,6 +79,7 @@ hr {
   line-height: 29px;
   letter-spacing: -1px;
   font-family: "Montserrat", Times, serif;
+  white-space: nowrap;
 }
 
 .display-wrapper {
@@ -98,6 +99,7 @@ hr {
 .input-wrapper {
   display: flex;
   gap: 11px;
+  align-self: center;
 }
 
 .send-button {
@@ -121,6 +123,7 @@ hr {
 .send-button:disabled {
   background: #dddddd;
   opacity: 1;
+  cursor: not-allowed;
 }
 
 .new-match-button {
@@ -165,8 +168,12 @@ hr {
   color: #ff6600;
 }
 
-.d-none {
+.display-none {
   display: none;
+}
+
+.digit {
+  position: relative;
 }
 
 .item-0 {
@@ -176,14 +183,14 @@ hr {
 .item-1 {
   position: absolute;
   transform: rotate(90deg);
-  left: -22px;
+  left: -21px;
   top: 25px;
 }
 
 .item-2 {
   position: absolute;
   transform: rotate(90deg);
-  left: -22px;
+  left: -21px;
   top: 78px;
 }
 
@@ -195,20 +202,97 @@ hr {
 
 .item-4 {
   transform: rotate(270deg);
-  left: 22px;
+  left: 21px;
   top: 25px;
   position: absolute;
 }
 
 .item-5 {
   transform: rotate(270deg);
-  left: 22px;
+  left: 21px;
   top: 78px;
   position: absolute;
 }
 
 .item-6 {
-  left: 2px;
+  left: 0px;
   position: absolute;
-  top: 50px;
+  top: 49px;
+  width: 100%;
+  height: 15px;
+}
+
+@media (min-width: 768px) {
+  .digit > img {
+    width: 68.48px;
+    height: 14.83px;
+  }
+
+  .item-0 {
+    transform: rotate(180deg);
+    left: -29px;
+    top: 28px;
+  }
+
+  .item-1 {
+    position: absolute;
+    transform: rotate(90deg);
+    left: -29px;
+    top: 28px;
+  }
+
+  .item-2 {
+    position: absolute;
+    transform: rotate(90deg);
+    left: -29px;
+    top: 95px;
+  }
+
+  .item-3 {
+    top: 123px;
+    left: 0px;
+    position: absolute;
+  }
+
+  .item-4 {
+    transform: rotate(270deg);
+    left: 29px;
+    top: 28px;
+    position: absolute;
+  }
+
+  .item-5 {
+    transform: rotate(270deg);
+    left: 29px;
+    top: 95px;
+    position: absolute;
+  }
+
+  .item-6 {
+    left: 0px;
+    position: absolute;
+    top: 59px;
+  }
+
+  img:last-child {
+    width: 100%;
+    height: 18.88px;
+  }
+
+  hr {
+    width: 255px;
+  }
+
+  .title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .number {
+    margin-top: 16px;
+  }
+
+  .card {
+    height: 588px;
+  }
 }

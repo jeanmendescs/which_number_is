@@ -15,7 +15,13 @@ const displayNumber = (number, id, color) => {
     elements.push(element);
   }
 
-  elements.forEach((element) => (element.src = `assets/${color}-bar.svg`));
+  elements.forEach((element, index) => {
+    if (index === 6) {
+      element.src = `assets/center-${color}-bar.svg`;
+      return;
+    }
+    element.src = `assets/${color}-bar.svg`;
+  });
 
   switch (number) {
     case 0:
@@ -88,9 +94,9 @@ const displayedNumbersToChange = (number, color) => {
 
   if (number < 10) {
     elements.push({ id: "first-digit", number, color });
-    firstDigit.classList.remove(`d-none`);
-    secondDigit.classList.add(`d-none`);
-    thirdDigit.classList.add(`d-none`);
+    firstDigit.classList.remove("display-none");
+    secondDigit.classList.add("display-none");
+    thirdDigit.classList.add("display-none");
     return elements;
   }
   if (number < 100) {
@@ -98,15 +104,15 @@ const displayedNumbersToChange = (number, color) => {
       { id: "first-digit", number: Number(numberToString[0]), color },
       { id: "second-digit", number: Number(numberToString[1]), color }
     );
-    firstDigit.classList.remove(`d-none`);
-    secondDigit.classList.remove(`d-none`);
-    thirdDigit.classList.add(`d-none`);
+    firstDigit.classList.remove("display-none");
+    secondDigit.classList.remove("display-none");
+    thirdDigit.classList.add("display-none");
     return elements;
   }
 
-  firstDigit.classList.remove(`d-none`);
-  secondDigit.classList.remove(`d-none`);
-  thirdDigit.classList.remove(`d-none`);
+  firstDigit.classList.remove("display-none");
+  secondDigit.classList.remove("display-none");
+  thirdDigit.classList.remove("display-none");
 
   elements.push(
     { id: "first-digit", number: Number(numberToString[0]), color },
@@ -128,7 +134,7 @@ const onFecthDataHandle = (value, isError = false) => {
   const isLesser = currentGuess < value;
 
   input.value = "";
-  statusGuess.classList.remove("d-none");
+  statusGuess.classList.remove("display-none");
 
   if (!hasWon && !isError) {
     statusGuess.innerHTML = isLesser ? "É menor" : "É maior";
@@ -143,15 +149,15 @@ const onFecthDataHandle = (value, isError = false) => {
   statusGuess.style.color = hasWon ? "#32BF00" : "#CC3300";
   statusGuess.innerHTML = hasWon ? "Você acertou!" : "Erro";
   displayedNumbersHandle(value, hasWon ? "green" : "red");
-  newMatchButton.classList.remove("d-none");
+  newMatchButton.classList.remove("display-none");
   input.disabled = true;
   sendButton.disabled = true;
 };
 
 const hideDisplayedNumbers = () => {
-  firstDigit.classList.add(`d-none`);
-  secondDigit.classList.add(`d-none`);
-  thirdDigit.classList.add(`d-none`);
+  firstDigit.classList.add("display-none");
+  secondDigit.classList.add("display-none");
+  thirdDigit.classList.add("display-none");
 };
 
 const onNewMatchHandle = () => {
@@ -159,8 +165,8 @@ const onNewMatchHandle = () => {
   updateValue("");
   statusGuess.innerHTML = 0;
   statusGuess.style.color = "#ff6600";
-  statusGuess.classList.add("d-none");
-  newMatchButton.classList.add("d-none");
+  statusGuess.classList.add("display-none");
+  newMatchButton.classList.add("display-none");
   input.disabled = false;
   sendButton.disabled = false;
 };

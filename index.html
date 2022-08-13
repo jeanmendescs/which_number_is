@@ -4,16 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Palpite</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@700&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -25,144 +21,39 @@
           <hr />
         </div>
         <div class="display-wrapper" id="display-wrapper">
-          <h3 class="description d-none" id="status-guess"></h3>
+          <h3 class="description display-none" id="status-guess"></h3>
           <div class="numbers">
-            <div id="first-digit" class="d-none" style="position: relative">
-              <img
-                class="item-0"
-                id="first-digit-0"
-                src="assets/black-bar.svg"
-                alt="asd"
-              />
-              <img
-                class="item-1"
-                id="first-digit-1"
-                src="assets/black-bar.svg"
-                alt="asd"
-              />
-              <img
-                class="item-2"
-                id="first-digit-2"
-                src="assets/black-bar.svg"
-                alt="asd"
-              />
-              <img
-                class="item-3"
-                id="first-digit-3"
-                src="assets/black-bar.svg"
-                alt="asd"
-              />
-              <img
-                class="item-4"
-                id="first-digit-4"
-                src="assets/black-bar.svg"
-                alt="asd"
-              />
-              <img
-                class="item-5"
-                id="first-digit-5"
-                src="assets/black-bar.svg"
-                alt="asd"
-              />
-              <img
-                class="item-6"
-                id="first-digit-6"
-                src="assets/center-black-bar.svg"
-                alt="asd"
-              />
+            <div id="first-digit" class="display-none digit">
+              <img class="item-0" id="first-digit-0" alt="bar" />
+              <img class="item-1" id="first-digit-1" alt="bar" />
+              <img class="item-2" id="first-digit-2" alt="bar" />
+              <img class="item-3" id="first-digit-3" alt="bar" />
+              <img class="item-4" id="first-digit-4" alt="bar" />
+              <img class="item-5" id="first-digit-5" alt="bar" />
+              <img class="item-6" id="first-digit-6" alt="bar" />
             </div>
-            <div id="second-digit" class="d-none" style="position: relative">
-              <img
-                class="item-0"
-                id="second-digit-0"
-                src="assets/black-bar.svg"
-                alt="asd"
-              />
-              <img
-                class="item-1"
-                id="second-digit-1"
-                src="assets/black-bar.svg"
-                alt="asd"
-              />
-              <img
-                class="item-2"
-                id="second-digit-2"
-                src="assets/black-bar.svg"
-                alt="asd"
-              />
-              <img
-                class="item-3"
-                id="second-digit-3"
-                src="assets/black-bar.svg"
-                alt="asd"
-              />
-              <img
-                class="item-4"
-                id="second-digit-4"
-                src="assets/black-bar.svg"
-                alt="asd"
-              />
-              <img
-                class="item-5"
-                id="second-digit-5"
-                src="assets/black-bar.svg"
-                alt="asd"
-              />
-              <img
-                class="item-6"
-                id="second-digit-6"
-                src="assets/center-black-bar.svg"
-                alt="asd"
-              />
+            <div id="second-digit" class="display-none digit">
+              <img class="item-0" id="second-digit-0" alt="bar" />
+              <img class="item-1" id="second-digit-1" alt="bar" />
+              <img class="item-2" id="second-digit-2" alt="bar" />
+              <img class="item-3" id="second-digit-3" alt="bar" />
+              <img class="item-4" id="second-digit-4" alt="bar" />
+              <img class="item-5" id="second-digit-5" alt="bar" />
+              <img class="item-6" id="second-digit-6" alt="bar" />
             </div>
-            <div id="third-digit" class="d-none" style="position: relative">
-              <img
-                class="item-0"
-                id="third-digit-0"
-                src="assets/black-bar.svg"
-                alt="asd"
-              />
-              <img
-                class="item-1"
-                id="third-digit-1"
-                src="assets/black-bar.svg"
-                alt="asd"
-              />
-              <img
-                class="item-2"
-                id="third-digit-2"
-                src="assets/black-bar.svg"
-                alt="asd"
-              />
-              <img
-                class="item-3"
-                id="third-digit-3"
-                src="assets/black-bar.svg"
-                alt="asd"
-              />
-              <img
-                class="item-4"
-                id="third-digit-4"
-                src="assets/black-bar.svg"
-                alt="asd"
-              />
-              <img
-                class="item-5"
-                id="third-digit-5"
-                src="assets/black-bar.svg"
-                alt="asd"
-              />
-              <img
-                class="item-6"
-                id="third-digit-6"
-                src="assets/center-black-bar.svg"
-                alt="asd"
-              />
+            <div id="third-digit" class="display-none digit">
+              <img class="item-0" id="third-digit-0" alt="bar" />
+              <img class="item-1" id="third-digit-1" alt="bar" />
+              <img class="item-2" id="third-digit-2" alt="bar" />
+              <img class="item-3" id="third-digit-3" alt="bar" />
+              <img class="item-4" id="third-digit-4" alt="bar" />
+              <img class="item-5" id="third-digit-5" alt="bar" />
+              <img class="item-6" id="third-digit-6" alt="bar" />
             </div>
           </div>
 
           <button
-            class="d-none new-match-button"
+            class="display-none new-match-button"
             type="button"
             onclick="onNewMatchHandle()"
             id="new-match"
