@@ -9,6 +9,7 @@
 - [Palpite](#palpite)
 - [Tabela de conteúdos](#tabela-de-conteúdos)
 - [Descrição](#descrição)
+- [Responsividade](#responsividade)
 - [Screenshots](#screenshots)
 - [Tecnologias](#tecnologias)
 - [Instalação](#instalação)
@@ -25,6 +26,10 @@ A lógica da aplicação se baseia em receber o input do usuário, consultar uma
 Ao receber o retorno da requisição, o input do usuário é exibido na tela e é retornado acima do valor númerico um texto que pode descrever o seguinte: o status do palpite (maior, menor, acerto) ou se a requisição retornou um erro.
 
 O input do usuário é exibido na tela por meio de imagens. A lógica de exibição dos números se deu pela montagem de pequenos blocos de imagens de forma a "desenhar" os números desejados.
+
+## Responsividade
+
+A responsividade do layout da aplicação pode ser visualizada ao acessá-la em um dispositivo com resolução acima ou abaixo de 768px de largura. O valor de 768px foi escolhido por ser um dos padrões de breakpoints mais utilizados no mercado, que é o do Bootstrap. Para verificar se o layout da aplicação estava condizente com o do Figma foi utilizada a extensão Perfect Pixel do navegador Google Chrome.
 
 ## Screenshots
 
